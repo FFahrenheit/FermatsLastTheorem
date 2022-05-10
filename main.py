@@ -1,21 +1,6 @@
 import functions
 import DEO
-import PSO
 import matplotlib.pyplot as plt
-
-def main():
-    s = functions.LastFermatTheorem(3)
-    dimension = 2
-    rango = s.MAX_VALUE - s.MIN_VALUE
-    cantidad_individuos = 50
-    ro = 8
-    phi1_max = 1.7
-    phi2_max = 2.0
-    v_max = rango * 0.01
-    n_generaciones = 2000
-
-    pso = PSO.PSO(cantidad_individuos, dimension, ro, phi1_max, phi2_max, v_max, s, n_generaciones)
-    pso.run()
 
 def differential_evolution():
     print('Iniciando algoritmo...')
