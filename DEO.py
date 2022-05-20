@@ -16,7 +16,6 @@ class DEO:
         self.crossover_rate = crossover_rate
         self.problem = problem
         self.generation_count = generation_count
-        self.range = self.problem.MAX_VALUE - self.problem.MIN_VALUE
 
     def run(self):
         self.individuals = np.array([ np.random.random_integers(self.problem.MIN_VALUE, self.problem.MAX_VALUE, size = self.dimensions) 
@@ -64,7 +63,9 @@ class DEO:
 
             if generation % 100 == 0:
                 print(f"Generation {generation}: {best} = {best_fitness}")
-                generations.append(best_fitness)
+                generations.append(
+                    (best, best_fitness)
+                )
             generation += 1
         
         return generations
