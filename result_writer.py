@@ -2,8 +2,8 @@ from datetime import datetime
 import csv
 
 class ResultWriter:
-    def __init__(self, header):
-        self.filename = "results/result-" + str(datetime.now()).replace(':','-') + ".csv"
+    def __init__(self, header, title='at'):
+        self.filename = f"results/result_{title}-{ str(datetime.now()).replace(':','-') } .csv"
         # self.filename = "results/result.csv"
         self.header = header
 

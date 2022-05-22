@@ -36,7 +36,7 @@ def main():
     header = ['Dimension', 'a', 'b'] + [f"Generacion {g}" for g in generaciones]
     print(header)
 
-    report = ResultWriter(header)
+    report = ResultWriter(header, 'fermat')
 
     for dimension in dimensiones:
         coeficientes = []

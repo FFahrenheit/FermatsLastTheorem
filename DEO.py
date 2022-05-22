@@ -9,13 +9,15 @@ class DEO:
                 stepsize,
                 crossover_rate,
                 problem,
-                generation_count):
+                generation_count,
+                callback=None):
         self.individuals_count = individuals_count
         self.dimensions = dimensions
         self.stepsize = stepsize,
         self.crossover_rate = crossover_rate
         self.problem = problem
         self.generation_count = generation_count
+        self.callback = callback
 
     def run(self):
         self.individuals = np.array([ np.random.random_integers(self.problem.MIN_VALUE, self.problem.MAX_VALUE, size = self.dimensions) 
@@ -69,6 +71,10 @@ class DEO:
                         'fitness' : best_fitness
                     }
                 )
+                if self.callback is not None:
+                    flag = self.callback(generation, best, best_fitness)
+                    if flag:
+                        return generations
             generation += 1
         
         return generations
