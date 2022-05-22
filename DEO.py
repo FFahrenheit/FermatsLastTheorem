@@ -64,7 +64,10 @@ class DEO:
             if generation % 100 == 0:
                 print(f"Generation {generation}: {best} = {best_fitness}")
                 generations.append(
-                    (best, best_fitness)
+                    {
+                        'best' : best,
+                        'fitness' : best_fitness
+                    }
                 )
             generation += 1
         
