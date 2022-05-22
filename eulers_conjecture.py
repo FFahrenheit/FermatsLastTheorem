@@ -3,12 +3,12 @@ import DEO
 
 def differential_evolution():
     print('Iniciando algoritmo...')
-    dimension = 5
-    cantidad_individuos = 100
+    dimension = 4
+    cantidad_individuos = 250
     f = 0.6
     c = 0.3
     n = 5          #Solve for n = 5
-    problema = problem.FermatsLastTheorem(n)
+    problema = problem.EulersConjecture(n)
 
     n_generaciones = 100_000
 
