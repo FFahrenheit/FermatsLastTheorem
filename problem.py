@@ -16,10 +16,10 @@ class FermatsLastTheorem:
         a, b, c ∈ Z - {0}
     """
     def fitness(self, cromosoma, print_console=False) -> float:
-        n = self.dimension 
+        n = self.dimension
         
         # Primeros n-1 elementos, su absoluto en forma de entero 
-        values = [ int(abs(round(c)) % self.MAX_VALUE) for c in cromosoma[:-1] ]    
+        values = [ int(abs(round(c)) % self.MAX_VALUE) for c in cromosoma ]    
 
         # Si los terminos son 0 o estan repetidos 
         if 0 in values or len(values) != len(set(values)):

@@ -3,8 +3,8 @@ import csv
 
 class ResultWriter:
     def __init__(self, header):
-        # self.filename = "results/result-" + str(datetime.now()).replace(':','-') + ".csv"
-        self.filename = "results/result.csv"
+        self.filename = "results/result-" + str(datetime.now()).replace(':','-') + ".csv"
+        # self.filename = "results/result.csv"
         self.header = header
 
         with open(self.filename, 'w', newline='') as results_file:
