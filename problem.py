@@ -18,7 +18,7 @@ class FermatsLastTheorem:
     def fitness(self, cromosoma, print_console=False) -> float:
         n = self.dimension
         
-        # Primeros n-1 elementos, su absoluto en forma de entero 
+        # Coeficientos en su forma entera positiva 
         values = [ int(abs(round(c)) % self.MAX_VALUE) for c in cromosoma ]    
 
         # Si los terminos son 0 o estan repetidos 
@@ -84,7 +84,7 @@ class EulersConjecture:
     def fitness(self, cromosoma, print_console=False) -> float:
         n = self.dimension
         
-        # Primeros n-1 elementos, su absoluto en forma de entero 
+        # Coeficientes enteros positivos 
         values = [ int(abs(round(c)) % self.MAX_VALUE) for c in cromosoma ]    
         coef_sum = sum(values)
 

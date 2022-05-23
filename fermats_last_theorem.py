@@ -20,18 +20,8 @@ def main():
     dimensiones = range(3, 9)
     generaciones = range(0, 1_501, 100)
     n_generaciones = generaciones[-1]
-    ejecuciones = 5
+    ejecuciones = 25
     ngeneraciones = list(generaciones)[-10:]
-
-    plt.figure(0)
-    plt.title('Fitness over generations')
-    plt.xlabel('Generations')
-    plt.ylabel('Fitness')
-
-    plt.figure(1)
-    plt.title('Fitness over last 1000 generations')
-    plt.xlabel('Generations')
-    plt.ylabel('Fitness')
 
     header = ['Dimension', 'a', 'b'] + [f"Generacion {g}" for g in generaciones]
     print(header)
@@ -40,6 +30,16 @@ def main():
 
     for dimension in dimensiones:
         coeficientes = []
+        
+        plt.figure(0)
+        plt.title('Fitness over generations')
+        plt.xlabel('Generations')
+        plt.ylabel('Fitness')
+
+        plt.figure(1)
+        plt.title('Fitness over last 1000 generations')
+        plt.xlabel('Generations')
+        plt.ylabel('Fitness')
         for _ in range(ejecuciones):
             resultados = calculo(dimension, n_generaciones)
             mejor = resultados[-1]['best']
